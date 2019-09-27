@@ -1,0 +1,26 @@
+﻿@model Blogger.ViewModels.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+@section scripts{
+    @{ await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");}
+}
+
+
+<form asp-antiforgery="true" asp-action="Login" asp-controller="Auth">
+    <div>
+        <div asp-validation-summary="All" />
+        <div>
+            <h4>E-mail: </h4>
+            <input type="email" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <h4>Password: </h4>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <input type="submit" value="Log in" />
+    </div>
+</form>
+

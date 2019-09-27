@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190920094906_M002.cs" />
+    <Compile Remove="Migrations\20190920094906_M002.Designer.cs" />
+    <Compile Remove="Migrations\20190920095217_M002.cs" />
+    <Compile Remove="Migrations\20190920095217_M002.Designer.cs" />
+    <Compile Remove="Migrations\20190926134321_M002.cs" />
+    <Compile Remove="Migrations\20190926134321_M002.Designer.cs" />
+    <Compile Remove="Migrations\20190926135335_M002.cs" />
+    <Compile Remove="Migrations\20190926135335_M002.Designer.cs" />
+    <Compile Remove="Migrations\20190926141055_M002.cs" />
+    <Compile Remove="Migrations\20190926141055_M002.Designer.cs" />
+    <Compile Remove="Migrations\20190926141124_M003.cs" />
+    <Compile Remove="Migrations\20190926141124_M003.Designer.cs" />
+    <Compile Remove="Migrations\20190927114651_M005.cs" />
+    <Compile Remove="Migrations\20190927114651_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927115158_M005.cs" />
+    <Compile Remove="Migrations\20190927115158_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927115514_M005.cs" />
+    <Compile Remove="Migrations\20190927115514_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927115648_M005.cs" />
+    <Compile Remove="Migrations\20190927115648_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927120006_M005.cs" />
+    <Compile Remove="Migrations\20190927120006_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927120421_M005.cs" />
+    <Compile Remove="Migrations\20190927120421_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927121648_M005.cs" />
+    <Compile Remove="Migrations\20190927121648_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190927122328_M005.cs" />
+    <Compile Remove="Migrations\20190927122328_M005.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspnetCore" Version="8.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+</Project>

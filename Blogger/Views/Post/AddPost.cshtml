@@ -1,0 +1,33 @@
+﻿@model Blogger.Models.Post
+@{
+    ViewData["Title"] = "AddPost";
+}
+
+@section scripts{
+    @{await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");}
+}
+
+@inject ApiDbContext dbContext
+
+<form asp-antiforgery="true" asp-action="AddPost" asp-controller="Post">
+    <div>
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="PostTitle"></label><br />
+            <input type="text" asp-for="PostTitle" />
+            <span asp-validation-for="PostTitle"></span>
+            <br />
+        </div>
+        <div>
+            <label asp-for="PostContent"></label><br />
+            <input type="text" asp-for="PostContent" />
+            <span asp-validation-for="PostContent"></span>
+            <br />
+        </div>
+
+        <input type="hidden" asp-for="BlogId" value="@dbContext.BlogList.FirstOrDefault(b=>b.User.Email == User.Identity.Name).ID" />
+        <div>
+            <input type="submit" value="Отправить" />
+        </div>
+    </div>
+</form>

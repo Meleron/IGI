@@ -1,0 +1,30 @@
+﻿@model Blogger.ViewModels.RegisterModel
+@{
+    ViewData["Title"] = "Registrate";
+}
+
+@section scripts{ 
+@{ await Html.RenderPartialAsync("~/views/Shared/_ValidationScriptsPartial.cshtml");}
+}
+
+<form asp-antiforgery="true">
+    <div>
+        <div>
+            <h4>E-mail: </h4>
+            <input type="email" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <h4>Password: </h4>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <h4>Repeat password: </h4>
+            <input type="password" asp-for="RepeatedPassword" />
+            <span asp-validation-for="RepeatedPassword"></span>
+        </div>
+        <input type="submit" value="Зарегистрироваться" asp-action="Registrate" asp-controller="Auth"/>
+    </div>
+</form>
+
