@@ -38,11 +38,29 @@ namespace Blogger.Controllers
             {
                 dbContext.PostsList.Add(postToAdd);
                 dbContext.SaveChanges();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return $"Error while adding user: {ex}";
             }
             return "New post successfully added";
+        }
+
+        [HttpPost]
+        public IActionResult RedactPost(int postId)
+        {
+            Post pst = dbContext.PostsList.Single(p => p.ID == postId);
+            return View(dbContext.PostsList.Single(p => p.ID == postId));
+        }
+        [HttpPost]
+        public IActionResult RedactPos(Post post)
+        {
+            Post postToUpdate = dbContext.PostsList.FirstOrDefault(p => p.ID == post.ID);
+            if (postToUpdate == null) return BadRequest();
+            postToUpdate.PostTitle = post.PostTitle;
+            postToUpdate.PostContent = post.PostContent;
+            dbContext.SaveChanges();
+            return Content("Post successfully updated");
         }
     }
 }

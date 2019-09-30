@@ -1,15 +1,15 @@
-﻿@{
+﻿@model List<Post>
+@using Microsoft.EntityFrameworkCore
+@{
     ViewData["Title"] = "Home Page";
 }
-@model Blogger.Models.ApiDbContext
-@using Microsoft.EntityFrameworkCore
 <div>
     <div>
         <div>
             <h2>Последние посты</h2>
         </div>
-        <div>
-            @foreach (var post in Model.PostsList.Include(post => post.Blog).ThenInclude(blog => blog.User).ToList())
+        <div style="word-break: break-all;">
+            @foreach (var post in Model)
             {
                 <div style="background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px">
                     <h3>@post.PostTitle by @post.Blog.User.Name</h3><br />
@@ -17,11 +17,5 @@
                 </div>
             }
         </div>
-    </div>
-    <div>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <a asp-action="AddPost" asp-controller="Post">Добавить пост</a>
-        }
     </div>
 </div>

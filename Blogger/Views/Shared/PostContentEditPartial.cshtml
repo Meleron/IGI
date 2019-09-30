@@ -1,0 +1,23 @@
+﻿@model Blogger.Models.Post
+@{
+    ViewData["Title"] = "PostContentEditPartial";
+}
+
+@section scripts{
+    @{await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");}
+}
+
+<div class="validation" asp-validation-summary="ModelOnly"></div>
+<div>
+    <label asp-for="PostTitle"></label><br />
+    <input type="text" asp-for="PostTitle" />
+    <span asp-validation-for="PostTitle"></span>
+    <br />
+</div>
+<div>
+    <label asp-for="PostContent"></label><br />
+    @*<input type="text" asp-for="PostContent" />*@
+    <textarea asp-for="PostContent"></textarea>
+    <span asp-validation-for="PostContent"></span>
+    <br />
+</div>

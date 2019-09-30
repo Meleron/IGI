@@ -1,0 +1,31 @@
+﻿@model Blogger.Models.Blog
+@using Microsoft.EntityFrameworkCore
+@{
+    ViewData["Title"] = "Index";    
+}
+
+<div style="text-align: center">
+    <div style="margin:5px; display:inline-block;">
+        <a class="btn btn-info" asp-action="AddPost" asp-controller="Post">Добавить пост</a>
+    </div>
+    <div>
+        @foreach (var post in Model.PostList)
+        {
+            <form method="post">
+                <div style=" display: flex; justify-content:center; align-items:center; background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px;">
+                    <div style="word-break: break-all">
+                        <h3>@post.PostTitle by @post.Blog.User.Name</h3><br />
+                        <h4>@post.PostContent</h4>
+                    </div>
+                    <div>
+                        <input type="hidden" value="@post.ID" name="postId" />
+                        <input type="submit" value="Редактировать" asp-action="RedactPost" asp-controller="Post" />
+                    </div>
+                    @*<div style="align-content:center; float:right; display:flex;">
+                            <input type="checkbox" class="toDelete" />
+                        </div>*@
+                </div>
+            </form>
+        }
+    </div>
+</div>

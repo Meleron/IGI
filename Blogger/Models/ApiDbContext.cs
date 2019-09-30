@@ -12,6 +12,8 @@ namespace Blogger.Models
         public DbSet<Post> PostsList { get; set; }
         public DbSet<User> UsersList { get; set; }
         public DbSet<Blog> BlogList { get; set; }
+        public User Include { get; internal set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Blogger;Trusted_Connection=True;");

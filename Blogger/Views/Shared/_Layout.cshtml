@@ -35,8 +35,9 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Last posts</a></li>
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <li><a asp-area="" asp-controller="Blog" asp-action="Index">My blog</a></li>
                         <li><a asp-area="" asp-controller="Auth" asp-action="SignOut">Sign out</a></li>
-                        <li><a>(Logged as @dbContext.UsersList.FirstOrDefault(u=>u.Email == User.Identity.Name).Name)</a></li>
+                        <li><a>(Logged as @dbContext.UsersList.FirstOrDefault(u => u.Email == User.Identity.Name).Name)</a></li>
                     }
                     else
                     {

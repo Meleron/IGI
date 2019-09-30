@@ -35,3 +35,6 @@ C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Blogger.p
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Blogger.csproj.CopyComplete
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.cshtml.g.cs
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Registrate.cshtml.g.cs
+C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Post\RedactPost.cshtml.g.cs
+C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Shared\PostContentEditPartial.cshtml.g.cs

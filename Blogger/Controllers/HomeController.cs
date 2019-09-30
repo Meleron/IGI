@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Blogger.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blogger.Controllers
 {
@@ -22,7 +23,9 @@ namespace Blogger.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            return View(dbContext);
+            List<Post> posts = dbContext.PostsList.Include(post => post.Blog).ThenInclude(blog => blog.User).ToList();
+            posts.Reverse();
+            return View(posts);
         }
 
         public IActionResult About()
@@ -45,3 +48,6 @@ namespace Blogger.Controllers
         }
     }
 }
+
+
+

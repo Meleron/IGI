@@ -1,0 +1,13 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "RedactPost";
+}
+
+<div>
+    <form method="post" asp-action="RedactPos" asp-controller="Post" asp-antiforgery="true">
+        @{await Html.RenderPartialAsync("~/Views/Shared/PostContentEditPartial.cshtml");}
+        <input type="hidden" asp-for="ID" value="@Model.ID"/>
+        <input type="submit" value="Save"/>
+    </form>
+</div>
+
