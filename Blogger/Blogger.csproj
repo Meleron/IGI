@@ -33,12 +33,48 @@
     <Compile Remove="Migrations\20190927121648_M005.Designer.cs" />
     <Compile Remove="Migrations\20190927122328_M005.cs" />
     <Compile Remove="Migrations\20190927122328_M005.Designer.cs" />
+    <Compile Remove="Migrations\20190930150748_M006.cs" />
+    <Compile Remove="Migrations\20190930150748_M006.Designer.cs" />
+    <Compile Remove="Migrations\20190930151045_M006.cs" />
+    <Compile Remove="Migrations\20190930151045_M006.Designer.cs" />
+    <Compile Remove="Migrations\20190930151624_M006.cs" />
+    <Compile Remove="Migrations\20190930151624_M006.Designer.cs" />
+    <Compile Remove="Migrations\20190930151707_M006.cs" />
+    <Compile Remove="Migrations\20190930151707_M006.Designer.cs" />
+    <Compile Remove="Migrations\20190930152106_M006.cs" />
+    <Compile Remove="Migrations\20190930152106_M006.Designer.cs" />
+    <Compile Remove="Migrations\20190930152315_M006.cs" />
+    <Compile Remove="Migrations\20190930152315_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002085854_M006.cs" />
+    <Compile Remove="Migrations\20191002085854_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002092821_M006.cs" />
+    <Compile Remove="Migrations\20191002092821_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002102348_M006.cs" />
+    <Compile Remove="Migrations\20191002102348_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002104555_M006.cs" />
+    <Compile Remove="Migrations\20191002104555_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002113239_M006.cs" />
+    <Compile Remove="Migrations\20191002113239_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002113320_M006.cs" />
+    <Compile Remove="Migrations\20191002113320_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002113422_M006.cs" />
+    <Compile Remove="Migrations\20191002113422_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002113555_M006.cs" />
+    <Compile Remove="Migrations\20191002113555_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002114518_M006.cs" />
+    <Compile Remove="Migrations\20191002114518_M006.Designer.cs" />
+    <Compile Remove="Migrations\20191002114554_M006.cs" />
+    <Compile Remove="Migrations\20191002114554_M006.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspnetCore" Version="8.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 

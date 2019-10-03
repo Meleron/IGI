@@ -38,6 +38,27 @@ namespace Blogger.Migrations
                     b.ToTable("BlogList");
                 });
 
+            modelBuilder.Entity("Blogger.Models.Comment", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<int>("PostId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comment");
+                });
+
             modelBuilder.Entity("Blogger.Models.Post", b =>
                 {
                     b.Property<int>("ID")
@@ -90,6 +111,19 @@ namespace Blogger.Migrations
                         .WithOne("Blog")
                         .HasForeignKey("Blogger.Models.Blog", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Blogger.Models.Comment", b =>
+                {
+                    b.HasOne("Blogger.Models.Post", "Post")
+                        .WithMany("CommentList")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Blogger.Models.User", "User")
+                        .WithMany("CommentList")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Blogger.Models.Post", b =>

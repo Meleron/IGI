@@ -8,13 +8,25 @@
         <div>
             <h2>Последние посты</h2>
         </div>
-        <div style="word-break: break-all;">
+        <div style="word-break: break-all; text-align:center">
             @foreach (var post in Model)
             {
-                <div style="background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px">
-                    <h3>@post.PostTitle by @post.Blog.User.Name</h3><br />
-                    <h4>@post.PostContent</h4>
-                </div>
+                @*<div style="background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px; display:flex">*@
+                <form method="post">
+                    <div style=" display: flex; justify-content:center; align-items:center; background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px;">
+                        <div style="width: 10%; margin: 5px -10% 0px 5px ">
+                            <h5 style="margin-top:5px; margin-bottom:-5px;" >#@post.ID</h5>
+                        </div>
+                        <div style="width: 80%;">
+                            <h3>@post.PostTitle by @post.Blog.User.Name</h3><br />
+                            <h4>@post.PostContent</h4>
+                        </div>
+                        <div style="width:10%; margin-left:-10%;">
+                            <input type="hidden" name="ID" value="@post.ID"/>
+                            <input type="submit" class="btn btn-info" value="Комментарии" asp-action="Show" asp-controller="Comment" />
+                        </div>
+                    </div>
+                </form>
             }
         </div>
     </div>

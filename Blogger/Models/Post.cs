@@ -20,7 +20,7 @@ namespace Blogger.Models
         //public User User { get; set; }
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
-
+        public List<Comment> CommentList {get; set;}
 
     }
 }

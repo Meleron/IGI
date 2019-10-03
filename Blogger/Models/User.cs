@@ -22,6 +22,6 @@ namespace Blogger.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public Blog Blog { get; set; }
-        //public List<Post> PostList { get; set; }
+        public List<Comment> CommentList { get; set; }
     }
 }
