@@ -21,11 +21,14 @@ namespace Blogger.Controllers
             dbContext = _dbContext;
         }
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Index(string searchString = null)
         {
-            List<Post> posts = dbContext.PostsList.Include(post => post.Blog).ThenInclude(blog => blog.User).ToList();
-            posts.Reverse();
-            return View(posts);
+            var posts = dbContext.PostsList.Include(post => post.Blog).ThenInclude(blog => blog.User).Where(p=>true);
+            if (searchString != null)
+                posts = posts.Where(p=>p.PostContent.Contains(searchString));
+            var toReturn = posts.ToList();
+            toReturn.Reverse();
+            return View(toReturn);
         }
 
         public IActionResult About()
