@@ -25,6 +25,7 @@ namespace Blogger.Controllers
             dbContext = _dbContext;
             mapper = _mapper;
         }
+
         [AllowAnonymous]
         public IActionResult Index(string searchString = null) 
         {
@@ -35,6 +36,19 @@ namespace Blogger.Controllers
             toReturn.Reverse();
             //return View(toReturn);
             return View(mapper.Map<List<Post>, List<PostModel>>(toReturn));
+        }
+
+        [HttpPut]
+        public void ChangeName(string newName) {
+            try
+            {
+                dbContext.UsersList.Single(u => u.Email == User.Identity.Name).Name = newName;
+                dbContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         public IActionResult About()
