@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Blogger.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogger.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = ("User"))]
     public class PostController : Controller
     {
 
-        ApiDbContext dbContext;
+        readonly ApiDbContext dbContext;
 
-        public PostController(ApiDbContext _dbContext)
+        public PostController(ApiDbContext _dbContext, IMapper _mapper)
         {
             dbContext = _dbContext;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [HttpGet]

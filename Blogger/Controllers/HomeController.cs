@@ -7,18 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 using Blogger.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Blogger.Mapped;
 
 namespace Blogger.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = ("User"))]
     public class HomeController : Controller
     {
+            
+        readonly ApiDbContext dbContext;
+        readonly IMapper mapper;
 
-        ApiDbContext dbContext;
 
-        public HomeController(ApiDbContext _dbContext)
+        public HomeController(ApiDbContext _dbContext, IMapper _mapper)
         {
             dbContext = _dbContext;
+            mapper = _mapper;
         }
         [AllowAnonymous]
         public IActionResult Index(string searchString = null)
@@ -28,7 +33,8 @@ namespace Blogger.Controllers
                 posts = posts.Where(p=>p.PostContent.Contains(searchString));
             var toReturn = posts.ToList();
             toReturn.Reverse();
-            return View(toReturn);
+            //return View(toReturn);
+            return View(mapper.Map<List<Post>, List<PostModel>>(toReturn));
         }
 
         public IActionResult About()

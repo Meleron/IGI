@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blogger.Controllers
 {
-    [Authorize]
+    [Authorize(Roles =("User"))]
     public class BlogController : Controller
     {
         readonly ApiDbContext dbContext;

@@ -21,6 +21,8 @@ namespace Blogger.Models
         [StringLength(30, MinimumLength = 5)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+        public int? RoleId { get; set; }
+        public Role Role { get; set; }
         public Blog Blog { get; set; }
         public List<Comment> CommentList { get; set; }
     }

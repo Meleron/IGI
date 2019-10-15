@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Blogger.Models;
 using Blogger.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
@@ -13,6 +14,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Blogger.Controllers
 {
+    [Authorize(Roles =("User"))]
     public class CommentController : Controller
     {
         readonly ApiDbContext dbContext;
