@@ -26,7 +26,7 @@ namespace Blogger.Controllers
             mapper = _mapper;
         }
         [AllowAnonymous]
-        public IActionResult Index(string searchString = null)
+        public IActionResult Index(string searchString = null) 
         {
             var posts = dbContext.PostsList.Include(post => post.Blog).ThenInclude(blog => blog.User).Where(p=>true);
             if (searchString != null)
