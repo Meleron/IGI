@@ -24,7 +24,7 @@ using Blogger.Models;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e150e2f59d8c1f4cd370c940478cca67dcd287fd", @"/Views/Comment/Show.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"358804778ee50facceaad3d8db461f20cb286ac4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae831b6c92c66549f6f495547e415898802a5364", @"/Views/_ViewImports.cshtml")]
     public class Views_Comment_Show : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Blogger.ViewModels.CommentPageModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-info"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -158,7 +158,7 @@ using Blogger.Models;
             WriteLiteral("        <div>\r\n            <h2>Добавить комментарий</h2>\r\n            <div>\r\n                ");
             EndContext();
             BeginContext(864, 302, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f47630027544815bb70fe7647dfbb8b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6618fe9800234e16ac1e871ed0434c4a", async() => {
                 BeginContext(884, 56, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"postid\"");
                 EndContext();
@@ -173,7 +173,7 @@ WriteAttributeValue("", 948, Model.Post.ID, 948, 14, false);
                 WriteLiteral(" />\r\n                    <textarea name=\"content\"></textarea>\r\n                    ");
                 EndContext();
                 BeginContext(1046, 95, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e11c2bbb173b496ab0914199a886e608", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ab5219f82174f4484b655d018736801", async() => {
                     BeginContext(1124, 8, true);
                     WriteLiteral("Добавить");
                     EndContext();

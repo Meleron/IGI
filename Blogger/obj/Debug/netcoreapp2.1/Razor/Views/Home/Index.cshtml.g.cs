@@ -29,7 +29,7 @@ using Microsoft.EntityFrameworkCore;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b70f0ad0f3f6e9e38d9556ebfdd2c954084f2d1", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"358804778ee50facceaad3d8db461f20cb286ac4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ae831b6c92c66549f6f495547e415898802a5364", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Blogger.Mapped.PostModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", new global::Microsoft.AspNetCore.Html.HtmlString("submit"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -75,12 +75,12 @@ using Microsoft.EntityFrameworkCore;
             WriteLiteral("<div>\r\n    <div>\r\n        <div>\r\n            <h2>Последние посты</h2>\r\n        </div>\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(236, 187, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65c24a24d480492d98b2faf78e5d5318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14fc85da44a14ae19413b671bee55c4a", async() => {
                 BeginContext(242, 82, true);
                 WriteLiteral("\r\n                Поиск: <input type=\"text\" name=\"searchString\">\r\n                ");
                 EndContext();
                 BeginContext(324, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fbbc1547c2264048934bee90642a3620", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "491372f8c14c4417b89043cf46c70246", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();
@@ -130,7 +130,7 @@ using Microsoft.EntityFrameworkCore;
             WriteLiteral("                ");
             EndContext();
             BeginContext(731, 1014, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ed75df0c534477ca3ba3d2a5a152c81", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61f04077b26648ce8144db667fe38d16", async() => {
                 BeginContext(751, 356, true);
                 WriteLiteral(@"
                     <div style="" display: flex; justify-content:center; align-items:center; background-color:lightgray; text-align:center; border-radius:10px; padding:3px 0px 10px 0px; margin:5px;"">
@@ -188,7 +188,7 @@ WriteAttributeValue("", 1511, post.ID, 1511, 8, false);
                 WriteLiteral(" />\r\n                            ");
                 EndContext();
                 BeginContext(1553, 107, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a001df23864b43169a60adbf4fd39a2c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9519c6f7e99f412cbd97f7be532682aa", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();
