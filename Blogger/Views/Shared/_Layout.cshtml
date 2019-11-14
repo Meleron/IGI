@@ -87,17 +87,40 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+<script src="~/js/signalr.js"></script>
 <script>
-    $('#changeName').click(function () {
-        var newName = "name=" + prompt("Enter you new name");
-        $.ajax({
-            type: "PUT",
-            url: "https://localhost:44318/Home/ChangeName",
-            data: str,
-            success: function () {
-                location.reload();
-            }
+    var connection = new signalR.HubConnectionBuilder().withUrl("/alert").build();
+    //document.getElementById("sendButton").disabled = true;
+
+    connection.on("Send", function(message) {
+        alert("New post by " + message);
+    });
+
+    connection.start().then(function() {
+        //document.getElementById("sendButton").disabled = false;
+    }).catch(function(err) {
+        return console.error(err.toString());
+    });
+
+    document.getElementById("sendButton").addEventListener("click", function(event) {
+        name = '@Context.User.Identity.Name';
+        connection.invoke("Send", name).catch(function(err) {
+            return console.error(err.toString());
         });
-        return false;
+        //event.preventDefault();
     });
 </script>
+@*<script>
+        $('#changeName').click(function () {
+            var newName = "name=" + prompt("Enter you new name");
+            $.ajax({
+                type: "PUT",
+                url: "https://localhost:44318/Home/ChangeName",
+                data: str,
+                success: function () {
+                    location.reload();
+                }
+            });
+            return false;
+        });
+    </script>*@

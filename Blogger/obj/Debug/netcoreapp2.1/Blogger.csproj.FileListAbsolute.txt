@@ -39,3 +39,4 @@ C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Blogger.p
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Blogger.csproj.CopyComplete
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Comment\Show.cshtml.g.cs
 C:\Users\dtrotsky\source\repos\Blogger\Blogger\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Banned.cshtml.g.cs
+C:\Users\dtrotsky\source\repos\Blogger\Blogger\bin\Debug\netcoreapp2.1\package.json

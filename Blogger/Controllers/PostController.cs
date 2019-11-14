@@ -28,7 +28,7 @@ namespace Blogger.Controllers
         }
 
         [HttpPost]
-        public string AddPost(Post postToAdd)
+        public IActionResult AddPost(Post postToAdd)
         {
             try
             {
@@ -37,9 +37,9 @@ namespace Blogger.Controllers
             }
             catch (Exception ex)
             {
-                return $"Error while adding user: {ex}";
+                return Content($"Error while adding user: {ex}");
             }
-            return "New post successfully added";
+            return RedirectToAction("Index", "Blog");
         }
 
         [HttpPost]

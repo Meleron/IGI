@@ -158,7 +158,7 @@ using Blogger.Models;
             WriteLiteral("        <div>\r\n            <h2>Добавить комментарий</h2>\r\n            <div>\r\n                ");
             EndContext();
             BeginContext(864, 302, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6618fe9800234e16ac1e871ed0434c4a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5db77c3bdcd4e42ab76829d03111922", async() => {
                 BeginContext(884, 56, true);
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"postid\"");
                 EndContext();
@@ -173,7 +173,7 @@ WriteAttributeValue("", 948, Model.Post.ID, 948, 14, false);
                 WriteLiteral(" />\r\n                    <textarea name=\"content\"></textarea>\r\n                    ");
                 EndContext();
                 BeginContext(1046, 95, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ab5219f82174f4484b655d018736801", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46ed75c77fa1450cba7084c08158d5a9", async() => {
                     BeginContext(1124, 8, true);
                     WriteLiteral("Добавить");
                     EndContext();

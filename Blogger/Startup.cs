@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
+using Blogger.SignalR;
 
 namespace Blogger
 {
@@ -34,6 +35,7 @@ namespace Blogger
             services.AddDbContext<ApiDbContext>();
             services.AddMvc().AddFluentValidation();
             services.AddAutoMapper();
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -42,6 +44,10 @@ namespace Blogger
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+            app.UseSignalR(routes=>
+            {
+                routes.MapHub<AlertHub>("/alert");
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
