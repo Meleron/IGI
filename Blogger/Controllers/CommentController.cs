@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Blogger.Models;
+using Blogger.Paging;
 using Blogger.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +39,15 @@ namespace Blogger.Controllers
             dbContext.CommentList.Add(new Comment { Content = content, Post = dbContext.PostsList.Single(p => p.ID == postId), User = dbContext.UsersList.Single(u => u.Email == User.Identity.Name) });
             dbContext.SaveChanges();
             return Content("Комментарий успешно добавлен");
+        }
+
+
+        [HttpGet]
+        public ActionResult GetCommentsPaged(int ID, int pageNumber = 1, int pageSize = 20)
+        {
+            List<Comment> comments = dbContext.CommentList.Include(c => c.User).Where(c => c.PostId == ID).ToList();
+            PagedData<Comment> a = comments.PagedResult(pageNumber, pageSize);
+            return Json(a, new Newtonsoft.Json.JsonSerializerSettings { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore });
         }
     }
 }

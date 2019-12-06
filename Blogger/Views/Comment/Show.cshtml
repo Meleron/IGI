@@ -2,42 +2,82 @@
 @{
     ViewData["Title"] = "Show";
 }
-<div>
+<body onload="test(0)">
     <div>
-        <h2>@Model.Post.PostTitle</h2>
-        <h3>@Model.Post.PostContent</h3>
-    </div>
-    <div>
-        @if (Model.CommentList.Count == 0)
-        {
-            <h4>Комментарии отсуствуют</h4>
-        }
-        else
-        {
-            <h2>Комментарии:</h2>
-            <ul>
-                @foreach (var comment in Model.CommentList)
-                {
-                    <li>
-                        <h4>@string.Format($"{comment.User.Name} сказал: ")</h4>
-                        <h4>@comment.Content</h4>
-                    </li>
-                }
-            </ul>
-        }
-    </div>
-    @if (User.Identity.IsAuthenticated)
-    {
         <div>
-            <h2>Добавить комментарий</h2>
+            <h2>@Model.Post.PostTitle</h2>
+            <h3>@Model.Post.PostContent</h3>
+        </div>
+        <div>
+            @if (Model.CommentList.Count == 0)
+            {
+                <h4>Комментарии отсуствуют</h4>
+            }
+            else
+            {
+                <h2>Комментарии:</h2>
+                <ul id="comments">
+                    @*@foreach (var comment in Model.CommentList)
+                        {
+                            <li>
+                                <h4>@string.Format($"{comment.User.Name} сказал: ")</h4>
+                                <h4>@comment.Content</h4>
+                            </li>
+                        }*@
+                </ul>
+            }
             <div>
-                <form method="post">
-                    <input type="hidden" name="postid" value="@Model.Post.ID" />
-                    <textarea name="content"></textarea>
-                    <button class="btn btn-info" asp-action="AddComment" asp-controller="Comment">Добавить</button>
-                </form>
+                <select id="pageNumber" onchange="test(this.selectedIndex + 1)">
+                </select>
             </div>
         </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div>
+                <h2>Добавить комментарий</h2>
+                <div>
+                    <form method="post">
+                        <input type="hidden" name="postid" value="@Model.Post.ID" />
+                        <textarea name="content"></textarea>
+                        <button class="btn btn-info" asp-action="AddComment" asp-controller="Comment">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+@*<button onclick="test()">load comments</button>*@
+<script>
+    function test(pageN) {
+        $.ajax('GetCommentsPaged?ID=@Model.Post.ID&pageNumber=' + pageN + '&pageSize=5').done((response) => {
+            document.getElementById("comments").innerHTML = ""
+            for (let i = 0; i < response.Data.length; i++) {
+                $("#comments").append(
+                    `
+                    <li>
+                        <h4>@@${response.Data[i].User.Name} сказал:</h4>
+                        <h4>${response.Data[i].Content}</h4>
+                    </li>
+                    `
+                )
+            }
+            var selector = document.getElementById('pageNumber');
+            var value = 0
+            if (selector.length != 0)
+                value = selector[selector.selectedIndex].value - 1;
+            $("#pageNumber").children().remove().end()
+            for (let i = 0; i < response.TotalPages; i++) {
+                $("#pageNumber").append(
+                    `
+                        <option>${i+1}</option>
+                    `
+                )
+            }
+            $("#pageNumber").val(value + 1)
+            //var choosen = document.getElementById("pageNumber")[this.selectedIndex].value;
+            //alert(choosen)
+            //alert(value)
+        });
     }
-</div>
-
+</script>

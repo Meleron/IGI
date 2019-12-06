@@ -81,7 +81,7 @@ using Blogger.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(221, 436, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dd64c60aa9c4058a7001f27866ad776", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f446abf5fa614cf78e0c3cc6fd470b3a", async() => {
                 BeginContext(293, 13, true);
                 WriteLiteral("\r\n    <div>\r\n");
                 EndContext();
@@ -94,7 +94,7 @@ using Blogger.Models;
                 WriteLiteral("\r\n\r\n        ");
                 EndContext();
                 BeginContext(409, 125, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6601a85d970444448add5ddda1326f72", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "712bcf6402684de89ae3dd81461b0a1e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

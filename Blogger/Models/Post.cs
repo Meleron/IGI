@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,9 +17,8 @@ namespace Blogger.Models
         [Required]
         [StringLength(500, MinimumLength = 5)]
         public string PostContent { get; set; }
-        //public int UserID { get; set; }
-        //public User User { get; set; }
         public int BlogId { get; set; }
+        [JsonIgnore]
         public Blog Blog { get; set; }
         public List<Comment> CommentList {get; set;}
 
