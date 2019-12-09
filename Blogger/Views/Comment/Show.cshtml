@@ -29,6 +29,11 @@
             <div>
                 <select id="pageNumber" onchange="test(this.selectedIndex + 1)">
                 </select>
+                <select id="pageSize" onchange="test(1)">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                </select>
             </div>
         </div>
         @if (User.Identity.IsAuthenticated)
@@ -50,7 +55,8 @@
 @*<button onclick="test()">load comments</button>*@
 <script>
     function test(pageN) {
-        $.ajax('GetCommentsPaged?ID=@Model.Post.ID&pageNumber=' + pageN + '&pageSize=5').done((response) => {
+        var pageSizeSelector = document.getElementById("pageSize")
+        $.ajax('GetCommentsPaged?ID=@Model.Post.ID&pageNumber=' + pageN + '&pageSize=' + pageSizeSelector[pageSizeSelector.selectedIndex].value).done((response) => {
             document.getElementById("comments").innerHTML = ""
             for (let i = 0; i < response.Data.length; i++) {
                 $("#comments").append(
