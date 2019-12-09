@@ -1,4 +1,6 @@
 ﻿@model Blogger.ViewModels.LoginModel
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
 @{
     ViewData["Title"] = "Login";
 }
@@ -15,10 +17,10 @@
             <span asp-validation-for="Email"></span>
         </div>
         <div>
-            <h4>Password: </h4>
+            <h4>@Localizer["PasswordLabel"]: </h4>
             <input type="password" asp-for="Password" />
             <span asp-validation-for="Password"></span>
         </div>
-        <input type="submit" value="Log in" />
+        <input type="submit" value="@Localizer["LogInLabel"]" />
     </div>
 </form>

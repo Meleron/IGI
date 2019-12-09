@@ -13,7 +13,7 @@ namespace Blogger.TagHelpers
         {
             output.TagName = "a";
             output.Attributes.SetAttribute("href", Address);
-            output.Content.SetContent("My VK profile");
+            output.Content.SetContent("VK");
         }
     }
 }

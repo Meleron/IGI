@@ -1,4 +1,6 @@
 ﻿@model Blogger.ViewModels.CommentPageModel
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
 @{
     ViewData["Title"] = "Show";
 }
@@ -11,11 +13,11 @@
         <div>
             @if (Model.CommentList.Count == 0)
             {
-                <h4>Комментарии отсуствуют</h4>
+                <h4>@Localizer["NoCommentsLabel"]</h4>
             }
             else
             {
-                <h2>Комментарии:</h2>
+                <h2>@Localizer["CommentsLabel"]</h2>
                 <ul id="comments">
                     @*@foreach (var comment in Model.CommentList)
                         {
@@ -39,12 +41,12 @@
         @if (User.Identity.IsAuthenticated)
         {
             <div>
-                <h2>Добавить комментарий</h2>
+                <h2>@Localizer["AddCommentLabel"]</h2>
                 <div>
                     <form method="post">
                         <input type="hidden" name="postid" value="@Model.Post.ID" />
                         <textarea name="content"></textarea>
-                        <button class="btn btn-info" asp-action="AddComment" asp-controller="Comment">Добавить</button>
+                        <button class="btn btn-info" asp-action="AddComment" asp-controller="Comment">@Localizer["AddCommentButton"]</button>
                     </form>
                 </div>
             </div>
@@ -62,14 +64,14 @@
                 $("#comments").append(
                     `
                     <li>
-                        <h4>@@${response.Data[i].User.Name} сказал:</h4>
+                        <h4>@@${response.Data[i].User.Name} @Localizer["SaidLabel"]:</h4>
                         <h4>${response.Data[i].Content}</h4>
                     </li>
                     `
                 )
             }
             var selector = document.getElementById('pageNumber');
-            var value = 0
+            var value = 0;
             if (selector.length != 0)
                 value = selector[selector.selectedIndex].value - 1;
             $("#pageNumber").children().remove().end()

@@ -8,6 +8,7 @@ using Blogger.Paging;
 using Blogger.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.Internal;
@@ -15,7 +16,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Blogger.Controllers
 {
-    [Authorize(Roles =("User"))]
+    [Authorize(Roles = ("User"))]
     public class CommentController : Controller
     {
         readonly ApiDbContext dbContext;
@@ -39,6 +40,7 @@ namespace Blogger.Controllers
             dbContext.CommentList.Add(new Comment { Content = content, Post = dbContext.PostsList.Single(p => p.ID == postId), User = dbContext.UsersList.Single(u => u.Email == User.Identity.Name) });
             dbContext.SaveChanges();
             return Content("Комментарий успешно добавлен");
+            //return RedirectToAction("Show", new RouteValueDictionary { { "id", 12 } });
         }
 
 

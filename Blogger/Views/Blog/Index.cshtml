@@ -1,4 +1,6 @@
 ﻿@model Blogger.Models.Blog
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
 @using Microsoft.EntityFrameworkCore
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +8,7 @@
 
 <div style="text-align: center">
     <div style="margin:5px; display:inline-block;">
-        <a class="btn btn-success" asp-action="AddPost" asp-controller="Post">Добавить пост</a>
+        <a class="btn btn-success" asp-action="AddPost" asp-controller="Post">@Localizer["AddPostLabel"]</a>
     </div>
     <div>
         @foreach (var post in Model.PostList)
@@ -22,7 +24,7 @@
                     </div>
                     <div style="width:10%; margin-left:-10%;">
                         <input type="hidden" value="@post.ID" name="postId" />
-                        <input type="submit" class="btn btn-warning" value="Редактировать" asp-action="RedactPost" asp-controller="Post" />
+                        <input type="submit" class="btn btn-warning" value="@Localizer["RedactPostLabel"]" asp-action="RedactPost" asp-controller="Post" />
                     </div>
                     @*<div style="align-content:center; float:right; display:flex;">
                             <input type="checkbox" class="toDelete" />

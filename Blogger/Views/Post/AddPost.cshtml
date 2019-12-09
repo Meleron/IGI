@@ -1,4 +1,6 @@
 ﻿@model Blogger.Models.Post
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
 @{
     ViewData["Title"] = "AddPost";
 }
@@ -16,7 +18,7 @@
 
         <input type="hidden" asp-for="BlogId" value="@dbContext.BlogList.FirstOrDefault(b=>b.User.Email == User.Identity.Name).ID" />
         <div>
-            <input type="submit" id="sendButton" value="Отправить" />
+            <input type="submit" id="sendButton" value="@Localizer["SendButton"]" />
         </div>
     </div>
 </form>

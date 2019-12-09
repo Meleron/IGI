@@ -1,4 +1,6 @@
-﻿@inject ApiDbContext dbContext
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
+@inject ApiDbContext dbContext;
 
 <!DOCTYPE html>
 <html>
@@ -32,18 +34,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Last posts</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["LastPostsLabel"]</a></li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a asp-area="" asp-controller="Blog" asp-action="Index">My blog</a></li>
-                        <li><a asp-area="" asp-controller="Auth" asp-action="SignOut">Sign out</a></li>
+                        <li><a asp-area="" asp-controller="Blog" asp-action="Index">@Localizer["MyBlogLabel"]</a></li>
+                        <li><a asp-area="" asp-controller="Auth" asp-action="SignOut">@Localizer["SignOutLabel"]</a></li>
                         <li><a>(Logged as @dbContext.UsersList.FirstOrDefault(u => u.Email == User.Identity.Name).Name)</a></li>
-                        <li><a id="changeName">Change name</a></li>
+                        @*<li><a id="changeName">Change name</a></li>*@
                     }
                     else
                     {
-                        <li><a asp-area="" asp-controller="Auth" asp-action="Login">Sign in</a></li>
-                        <li><a asp-area="" asp-controller="Auth" asp-action="Registrate">Registrate</a></li>
+                        <li><a asp-area="" asp-controller="Auth" asp-action="Login">@Localizer["SignInLabel"]</a></li>
+                        <li><a asp-area="" asp-controller="Auth" asp-action="Registrate">@Localizer["RegistrateLabel"]</a></li>
                     }
                 </ul>
             </div>
@@ -53,6 +55,9 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
+        <div>
+            @await Html.PartialAsync("_SelectLanguagePartial")
+        </div>
         @RenderBody()
         <hr />
         <footer>
@@ -90,14 +95,12 @@
 <script src="~/js/signalr.js"></script>
 <script>
     var connection = new signalR.HubConnectionBuilder().withUrl("/alert").build();
-    //document.getElementById("sendButton").disabled = true;
 
     connection.on("Send", function(message) {
         alert("New post by " + message);
     });
 
     connection.start().then(function() {
-        //document.getElementById("sendButton").disabled = false;
     }).catch(function(err) {
         return console.error(err.toString());
     });
@@ -107,20 +110,5 @@
         connection.invoke("Send", name).catch(function(err) {
             return console.error(err.toString());
         });
-        //event.preventDefault();
     });
 </script>
-@*<script>
-        $('#changeName').click(function () {
-            var newName = "name=" + prompt("Enter you new name");
-            $.ajax({
-                type: "PUT",
-                url: "https://localhost:44318/Home/ChangeName",
-                data: str,
-                success: function () {
-                    location.reload();
-                }
-            });
-            return false;
-        });
-    </script>*@

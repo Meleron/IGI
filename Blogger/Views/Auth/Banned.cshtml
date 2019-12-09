@@ -1,7 +1,9 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
+
 @{
     ViewData["Title"] = "Banned";
 }
 
-<h2>Banned</h2>
+<h2>@Localizer["BannedLabel"]</h2>
 

@@ -1,17 +1,19 @@
 ﻿@model List<Blogger.Mapped.PostModel>
-@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Mvc.Localization;
 @{
     ViewData["Title"] = "Home Page";
 }
+@inject IViewLocalizer Localizer;
+
 <div>
     <div>
         <div>
-            <h2>Последние посты</h2>
+            <h2>@Localizer["LastPostsLabel"]</h2>
         </div>
         <div>
             <form>
-                Поиск: <input type="text" name="searchString">
-                <input type="submit" value="Поиск" asp-action="Index" asp-controller="Home" />
+                @Localizer["SearchLabel"]: <input type="text" name="searchString">
+                <input type="submit" value="@Localizer["SearchButton"]" asp-action="Index" asp-controller="Home" />
             </form>
         </div>
         <div style="word-break: break-all; text-align:center">
@@ -29,7 +31,7 @@
                         </div>
                         <div style="width:10%; margin-left:-10%;">
                             <input type="hidden" name="ID" value="@post.ID" />
-                            <input type="submit" class="btn btn-info" value="Комментарии" asp-action="Show" asp-controller="Comment" />
+                            <input type="submit" class="btn btn-info" value="@Localizer["CommentsButton"]" asp-action="Show" asp-controller="Comment" />
                         </div>
                     </div>
                 </form>

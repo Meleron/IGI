@@ -1,10 +1,12 @@
 ﻿@model Blogger.ViewModels.RegisterModel
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer;
 @{
     ViewData["Title"] = "Registrate";
 }
 
-@section scripts{ 
-@{ await Html.RenderPartialAsync("~/views/Shared/_ValidationScriptsPartial.cshtml");}
+@section scripts{
+    @{ await Html.RenderPartialAsync("~/views/Shared/_ValidationScriptsPartial.cshtml");}
 }
 
 <form asp-antiforgery="true">
@@ -15,16 +17,16 @@
             <span asp-validation-for="Email"></span>
         </div>
         <div>
-            <h4>Password: </h4>
+            <h4>@Localizer["PasswordLabel"]: </h4>
             <input type="password" asp-for="Password" />
             <span asp-validation-for="Password"></span>
         </div>
         <div>
-            <h4>Repeat password: </h4>
+            <h4>@Localizer["RepeatPasswordLabel"]: </h4>
             <input type="password" asp-for="RepeatedPassword" />
             <span asp-validation-for="RepeatedPassword"></span>
         </div>
-        <input type="submit" value="Зарегистрироваться" asp-action="Registrate" asp-controller="Auth"/>
+        <input type="submit" value="Зарегистрироваться" asp-action="Registrate" asp-controller="Auth" />
     </div>
 </form>
 

@@ -56,7 +56,8 @@ namespace Blogger.Controllers
             postToUpdate.PostTitle = post.PostTitle;
             postToUpdate.PostContent = post.PostContent;
             dbContext.SaveChanges();
-            return Content("Post successfully updated");
+            //return Content("Post successfully updated");
+            return RedirectToAction("Index", "Blog");
         }
     }
 }
