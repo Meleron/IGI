@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dtrotsky\\source\\repos\\Blogger\\Blogger\\Blogger.csproj": {}
+    "C:\\Users\\meleron\\source\\repos\\IGI\\Blogger\\Blogger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dtrotsky\\source\\repos\\Blogger\\Blogger\\Blogger.csproj": {
+    "C:\\Users\\meleron\\source\\repos\\IGI\\Blogger\\Blogger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dtrotsky\\source\\repos\\Blogger\\Blogger\\Blogger.csproj",
+        "projectUniqueName": "C:\\Users\\meleron\\source\\repos\\IGI\\Blogger\\Blogger.csproj",
         "projectName": "Blogger",
-        "projectPath": "C:\\Users\\dtrotsky\\source\\repos\\Blogger\\Blogger\\Blogger.csproj",
-        "packagesPath": "C:\\Users\\dtrotsky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dtrotsky\\source\\repos\\Blogger\\Blogger\\obj\\",
+        "projectPath": "C:\\Users\\meleron\\source\\repos\\IGI\\Blogger\\Blogger.csproj",
+        "packagesPath": "C:\\Users\\meleron\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\meleron\\source\\repos\\IGI\\Blogger\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dtrotsky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\meleron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

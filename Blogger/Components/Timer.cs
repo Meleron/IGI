@@ -1,0 +1,17 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Blogger.Components
+{
+    [ViewComponent]
+    public class Timer
+    {
+        public string Invoke()
+        {
+            return $"Время обновления страницы:{DateTime.Now.ToString("hh:mm:ss")}";
+        }
+    }
+}
